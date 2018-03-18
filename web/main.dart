@@ -13,16 +13,21 @@ clickSubmitButton(e) {
   print("Yes");
   InputElement input = querySelector('#commands');
   String output = "";
-  if(input.value == "left") {
-    output = "You are going left";
-  }else if(input.value == "right") {
-    output = "You are going right";
-  }else if(input.value == "up") {
-    output = "You are going up";
-  }else if(input.value == "down") {
-    output = "You are going down";
-  }else {
-    output = "Please use left, right, up and down..........";
+  switch (input.value){
+    case "left" :
+        output = "You are going left";
+        break;
+    case "right" :
+        output = "You are going right";
+        break;
+    case "up" :
+        output = "You are going up";
+        break;
+   case "down" :
+        output = "You are going down";
+        break;
+  default:
+        output = "Please use left, right, up and down..........";
   }
   var outputHtml = "<div>${output }</div>";
   querySelector('#output').appendHtml(outputHtml);
